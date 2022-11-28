@@ -15,6 +15,7 @@ const requestHandler=(req,res)=>{
     }
     else if (url === "/messages" && method == "POST") {
     
+
         const body = [];
         req.on('data', (chunk) => {
             console.log(chunk);
@@ -32,11 +33,13 @@ const requestHandler=(req,res)=>{
                 res.setHeader('Location', '/');//also a default header accepted by the browser
                 return res.end();
     
-            });
-    
+            }); 
+
+            
         })//this will be fired when we 're done parsed incomming request  data
-    
-    } else {
+        
+    } 
+    else {
         res.setHeader('Content-Type', 'text/html')
         res.write("<html>");
         res.write("<head><title>my first practice</title></head>");
@@ -68,7 +71,7 @@ const requestHandler=(req,res)=>{
 
 
 module.exports.handeler=requestHandler;
-module.exports.someText="hi my name is abhishek";
+module.exports.someText="hi my name is abhishek adhikary from dabadari,lowada,midnapur(west)";
 
 
 
